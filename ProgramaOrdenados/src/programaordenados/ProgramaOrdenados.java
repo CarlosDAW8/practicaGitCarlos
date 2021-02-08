@@ -16,11 +16,16 @@ public class ProgramaOrdenados {
      */
     public static void main(String[] args) {
         // TODO code application logic here
-        int numeros[] = new int[10];
+        int cuantos;
         int num;
         Scanner sc = new Scanner(System.in);
         
-        for(int i=0;i<numeros.length;i++){
+        System.out.println("¿Cuántos números va a leer?");
+        cuantos = sc.nextInt();
+        
+        int numeros[] = new int[cuantos];
+        
+        for(int i=0;i<cuantos;i++){
             System.out.println("Anota número" +i+ ":");
             num = sc.nextInt();
             if (repetido(numeros, num) == false) {
@@ -30,9 +35,9 @@ public class ProgramaOrdenados {
                 i--;
         }
         
-        burbuja(numeros, 10);
+        burbuja(numeros, cuantos);
         
-        for(int i=0;i<numeros.length;i++){
+        for(int i=0;i<cuantos;i++){
             System.out.println(numeros[i]);
         }
         
