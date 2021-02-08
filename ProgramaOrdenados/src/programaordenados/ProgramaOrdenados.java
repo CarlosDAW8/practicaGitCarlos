@@ -17,11 +17,17 @@ public class ProgramaOrdenados {
     public static void main(String[] args) {
         // TODO code application logic here
         int numeros[] = new int[10];
+        int num;
         Scanner sc = new Scanner(System.in);
         
         for(int i=0;i<numeros.length;i++){
             System.out.println("Anota número" +i+ ":");
-            numeros[i] = sc.nextInt();
+            num = sc.nextInt();
+            if (repetido(numeros, num) == false) {
+                numeros[i] = num;
+            }
+            else
+                i--;
         }
         
         burbuja(numeros, 10);
@@ -45,5 +51,15 @@ public class ProgramaOrdenados {
                 }
             }    
         }
+    }
+    
+    public static boolean repetido(int[] array, int valor) {
+    boolean repetido = false;
+    for (int i = 0; i < array.length && !repetido; i++) {
+        if (array[i] == valor) {
+            repetido = true;
+        }
+    }
+    return repetido;
     }
 }
